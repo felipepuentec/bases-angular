@@ -1,3 +1,4 @@
+import { DbzService } from '../services/dbz.service';
 import { Character } from './../interfaces/character.interface';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
@@ -6,23 +7,18 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   templateUrl: './main-page.component.html',
 })
 export class MainPageComponent {
-  public characters: Character[] = [
-    {
-      name: 'Krillin',
-      power: 1000,
-    },
-    {
-      name: 'Goku',
-      power: 9500,
-    },
-    {
-      name: 'Vegeta',
-      power: 7500,
-    },
-  ];
+  // Esto hace la inyeccion de dependencia
+  constructor(private dbzService: DbzService) {}
+
+  get characters(): Character[] {
+    return [...this.dbzService.characters];
+  }
+
+  onDeleteCharacter(id: string): void {
+    this.dbzService.deleteCharacterById(id);
+  }
 
   onNewCharacter(character: Character): void {
-    console.log('Main Page');
-    console.log(character);
+    this.dbzService.addCharacter(character);
   }
 }

@@ -3,8 +3,12 @@
 
 <div class="row">
   <div class="col">
+    <!-- On delete -->
     <!-- Ejemplo input -->
-    <dbz-list [characterList]="characters"></dbz-list>
+    <dbz-list
+      (onDelete)="onDeleteCharacter($event)"
+      [characterList]="characters"
+    ></dbz-list>
   </div>
   <div class="col">
     <!-- Ejemplo output - cuando este componente dbz... emita onNewCharacter -->
