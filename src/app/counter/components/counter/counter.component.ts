@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-counter',
@@ -13,6 +13,8 @@ import { Component, OnInit } from '@angular/core';
   `,
 })
 export class CounterComponent {
+  @Input() teste = 'teste';
+
   public counter = 10;
 
   increaseBy(value: number): void {
