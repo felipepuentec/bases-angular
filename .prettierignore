@@ -1,0 +1,9 @@
+# Ignore artifacts:
+build
+.angular
+
+# Config files
+.*
+.spec.*
+
+README.md
