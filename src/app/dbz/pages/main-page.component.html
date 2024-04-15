@@ -5,15 +5,15 @@
   <div class="col">
     <!-- On delete -->
     <!-- Ejemplo input -->
-    <dbz-list
-      (onDelete)="onDeleteCharacter($event)"
+    <app-dbz-list
+      (delete)="onDeleteCharacter($event)"
       [characterList]="characters"
-    ></dbz-list>
+    ></app-dbz-list>
   </div>
   <div class="col">
     <!-- Ejemplo output - cuando este componente dbz... emita onNewCharacter -->
-    <dbz-add-character
-      (onNewCharacter)="onNewCharacter($event)"
-    ></dbz-add-character>
+    <app-dbz-add-character
+      (newCharacter)="onNewCharacter($event)"
+    ></app-dbz-add-character>
   </div>
 </div>
